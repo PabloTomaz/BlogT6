@@ -1,0 +1,205 @@
+/* Reset básico para remover margens padrão */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: 0;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+body {
+    line-height: 1.6;
+    background-color: #f4f4f9;
+    background-image: url("./pain-gaming-seeklogo.png");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+}
+
+/* Cabeçalho */
+header {
+    color: white;
+    padding: 2rem;
+    text-align: center;
+}
+
+/* Conteúdo Principal */
+main {
+    max-width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+}
+
+.conteudo {
+    background: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+img{
+    width: 50px;
+}
+
+/* Botão Estilizado */
+button {
+    background-color: #db3434;
+    color: white;
+    border: none;
+    margin-top: 12px;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #000000;
+}
+
+/* Grid de Cards */
+.cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 24px;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    justify-content: center;
+    z-index: 2;
+}
+
+.cards-wrapper {
+    position: relative;
+    z-index: 10;
+    padding: 80px 0;
+}
+
+.card {
+    cursor: pointer;
+    transition: transform 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+}
+
+/* classe base */
+.card {
+    position: relative;
+    height: 320px;
+    border-radius: 16px;
+    overflow: hidden;
+    background: #000;
+}
+
+.card-link {
+    position: absolute;
+    inset: 0;
+    z-index: 5; 
+    text-decoration: none;
+    color: inherit;
+}
+
+/* imagem ocupa tudo */
+.card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+/* camada escura */
+.card::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+    to top,
+    rgba(0,0,0,0.8),
+    rgba(0,0,0,0.2)
+    );
+    z-index: 1;
+}
+
+/* texto */
+.overlay {
+    position: absolute;
+    bottom: 16px;
+    left: 16px;
+    right: 16px;
+    color: #fff;
+    z-index: 2;
+}
+
+.tag {
+    font-size: 12px;
+    font-weight: bold;
+    display: inline-block;
+    margin-bottom: 6px;
+
+}
+
+
+.overlay h3 {
+    margin: 6px 0;
+    font-size: 18px;
+    line-height: 1.2;
+}
+
+.overlay p {
+    margin: 0;
+    font-size: 14px;
+    opacity: 0.9;
+}
+
+/* Rodapé */
+footer{
+    background-color: #1f1f1f;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    color: #c5c7c7;
+}
+
+/* ===== RESPONSIVIDADE ===== */
+
+/* Tablet */
+@media (max-width: 1200px) {
+    .cards {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+        padding: 0 24px;
+    }
+
+    .card {
+        height: 300px;
+    }
+}
+
+/* Mobile */
+@media (max-width: 600px) {
+    .cards {
+        grid-template-columns: 1fr;
+        gap: 16px;
+        padding: 0 16px;
+    }
+
+    .card {
+        height: 260px;
+    }
+
+    .overlay h3 {
+        font-size: 16px;
+    }
+
+    .overlay p {
+        font-size: 13px;
+    }
+}
+
