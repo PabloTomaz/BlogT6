@@ -8,16 +8,15 @@
 
 body {
     line-height: 1.6;
-    background-color: #f4f4f9;
     background-image: url("./pain-gaming-seeklogo.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
 }
-
 /* Cabeçalho */
 header {
+    background-color: #1f1f1f;
     color: white;
     padding: 2rem;
     text-align: center;
